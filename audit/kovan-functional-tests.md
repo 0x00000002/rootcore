@@ -6,85 +6,146 @@ Tests are conducted on the Kovan test network.
 
 ### Contract owner:
 
-* Start Sale period by deploying contract with Start date and address of Beneficiary wallet.
+* Start Sale period by deploying contract with Start date and address of Beneficiary wallet
 
 ### Manager can:
 
-* Add/remove Contributors to/from Whitelist during Pre-Sale and Sale periods.
-* Pause/unpause Sales during Sale period.
+* Add/remove Contributors to/from Whitelist during Pre-Sale and Sale periods
+* Pause/unpause Sales during Sale period
+* Transfer Ownership of contracts
 
 ## Periods
-
-### Presale, 14 days
+### Presale – 14 days
 * Started automatically 14 days before <i>Sales</i>
 * Only Whitelisted can contribute
 * Minimum contribution: 200 ETH
-* No account max cap <u>( MAX contribution cap? )</u>
+* No Account MaxCap (if overall Hard/Soft MaxCap has not reached)
 
-### Sale
+### Sale – 14 days
 * Started by deploying contract with <i>Start date</i> and <i>Beneficiary account</i>
-* Maximum contribution: 40 ETH
+* Maximum contribution for usual accounts: 40 ETH
 * Whitelisted maximum contributors: no limits
 * Tokens are not transferable
 
-### Grace period
-* Only if Hard Cap in Sales has not reached. 
+### Grace period – 24 hrs
+* Is ON when Soft Cap has reached (the exact period does not matter)
+* Set End Time for Sale as NOW + 24hrs
+* Does matter only when Hard Cap has not reached
 * Duration: 24 hrs
 
 
 ## Accounts
 
 * CrowdSaleController []()
-* Manager
-* Beneficiary (MultiSig Wallet)
-* Contributors
-* Contributors White Listed
+* Manager []()
+* Beneficiary (MultiSig Wallet) []()
+* Contributors []()
+* WhiteListed Contributors []()
 
 
 ## Expected behaviour tests
 by roles
 
 ### Owner
- - [x] Deploy contract [0xda697](https://kovan.etherscan.io/tx/0xda697ed8f79f88ca0dbaf3dcbb59e42f88b9283082eff0377ab16bd558c42cbd)
-
+ - [] Deploy contract []()
+ 
 ### Contributors
- - [x] ContributeETH []()
- - [x] ContributePreSale []()
+ - [] ContributeETH []()
+ - [] ContributePreSale []()
+ - [] PreSale period: GraceDuration is ON when SoftCap is reached
+ - [] Sale period: GraceDuration is ON when SoftCap is reached
 
-### Management
- - [x] Transfer management []()
- - [x] Accept management []()
- - [x] Add account to WhiteList []()
- - [x] Remove account from WhiteList []()
- - [x] Pause Sale []()
- - [x] Unpause Sale []()
- - [x] ContributeFiat []()
+
+### Manager
+ - [] Transfer management []()
+ - [] Accept management []()
+ - [] Add account to WhiteList []()
+ - [] Remove account from WhiteList []()
+ - [] Pause Sale []()
+ - [] Unpause Sale []()
+ - [] ContributeFiat  []()
+ 
+### Token Owner
+ - [] transfer() []()
+ - [] transferFrom() []()
+ - [] approve() []()
+ - [] Enable / disable transfers []()
+
+### Smart Token Contract controller
+ - [] Enable / disable transfers []()
+ - [] Issue token []()
+ - [] Destroy tokens []()
+ - [] Enable / disable transfers []()
+
+
+### Contracts Owner
+ - [] Transfer contracts' controller Ownership []()
+ - [] Trying to accept Ownership []()
+
 
 ### System simulated events
- - [x] Sale Soft cap 100.000 ETH has reached 
- - [x] Sale Hard cap 110.000 ETH has reached 
+ - [] Sale Soft cap 100.000 ETH has reached 
+ - [] Sale Hard cap 110.000 ETH has reached 
 
 
 ## Unexpected behaviour tests
 
 
-### Pre-sale
- - [x] ContributeETH with insufficient amount []()
+### Contributors
+ - [] ContributePreSale when Sale is paused []()
+ - [] ContributePreSale with less than MIN_CONTRIBUTION (200ETH) []()
+ - [] ContributePreSale with gas price > 50 gWeis []()
+ - [] ContributePreSale earlier than NOW() - 14 days []()
+ - [] ContributePreSale later than NOW() []()
+ - [] ContributePreSale from non-Whitelisted account []()
+ - [] ContributePreSale when Soft MaxCap is reached []()
+ - [] ContributePreSale when Hard MaxCap is reached []()
+ - -
+ - [] ContributeETH when Sale is paused []()
+ - [] ContributeETH with amount exceeding the limit []()
+ - [] ContributeETH with gas price > 50 gWeis []()
+ - [] ContributeETH later than NOW() + 14 days []()
+ - [] ContributeETH earlier than NOW() []()
+ - [] ContributeETH with amount exceeding MAX_CONTRIBUTION (40ETH) from non-Whitelisted account []()
+ - [] ContributeETH when Soft MaxCap is reached []()
+ - [] ContributeETH when Hard MaxCap is reached []()
 
 
-### Sale
- - [x] ContributeETH with amount exceeding the limit []()
+ 
+### Token Owner
+ - [] transfer() tokens when transfers are not allowed []()
+ - [] transfer() tokens to invalid address []()
+ - [] transfer() tokens from account with insufficient funds []()
+ - [] transferFrom() to invalid address []()
+ - [] transferFrom() invalid address []()
+ - [] transferFrom() tokens from account with insufficient funds []()
+ - [] approve() (should be called twice)[]()
+
+### Smart Token Contract controller
+ - [] Issue tokens from unexpected account []()
+ - [] Issue tokens to the owner account []()
+ - [] Issue token to invalid (0x0) address []()
+ - [] Destroy tokens from other's account []()
+ - [] Destroy tokens from account with insufficient funds []()
+
+### Contracts Owner
+ - [] Transfer contract(s) Ownership from unexpected account []()
+ - [] Trying to accept Ownership from unexpected account []()
 
 
-### Management
- - [x] Transfer management from unexpected account []()
- - [x] Accept management from unexpected account []()
- - [x] Transfer contract(s) Ownership from unexpected account []()
- - [x] Accept contract(s) Ownership from unexpected account []()
- - [x] Add non-existing account to WhiteList []()
- - [x] Add to WhiteList already WhiteListed account []()
- - [x] Remove non-existing account from WhiteList []()
- - [x] Remove from WhiteList account which is not listed there[]()
- - [x] Pause already paused Sale []()
- - [x] Unpause on-going Sale []()
+### Manager
+ - [] Transfer management from unexpected account []()
+ - [] Trying to accept management from unexpected account []()
+ - [] Transfer contract(s) Ownership from unexpected account []()
+ - [] Trying to accept Ownership from unexpected account []()
+ - [] Add non-existing account to WhiteList []()
+ - [] Add to WhiteList already WhiteListed account []()
+ - [] Remove non-existing account from WhiteList []()
+ - [] Remove from WhiteList account which is not listed there[]()
+ - [] Pause already paused Sale []()
+ - [] Unpause on-going Sale []()
+ - [] ContributeFiat when Sale is paused []()
+ - [] ContributeFiat before Pre-Sale of after Sale is finished []()
+
+
 
