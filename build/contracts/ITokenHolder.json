@@ -20,6 +20,7 @@
       "name": "withdrawTokens",
       "outputs": [],
       "payable": false,
+      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
@@ -28,6 +29,7 @@
       "name": "acceptOwnership",
       "outputs": [],
       "payable": false,
+      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
@@ -41,6 +43,7 @@
         }
       ],
       "payable": false,
+      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -54,6 +57,7 @@
       "name": "transferOwnership",
       "outputs": [],
       "payable": false,
+      "stateMutability": "nonpayable",
       "type": "function"
     }
   ],
@@ -68,7 +72,7 @@
       "absolutePath": "/Users/tikonoff/projects/rootcore/contracts/interfaces/ITokenHolder.sol",
       "exportedSymbols": {
         "ITokenHolder": [
-          1782
+          1605
         ]
       }
     },
@@ -82,54 +86,54 @@
             ".15"
           ]
         },
-        "id": 1768,
+        "id": 1591,
         "name": "PragmaDirective",
-        "src": "0:24:16"
+        "src": "0:24:12"
       },
       {
         "attributes": {
-          "SourceUnit": 1739,
+          "SourceUnit": 1562,
           "absolutePath": "/Users/tikonoff/projects/rootcore/contracts/interfaces/IOwned.sol",
           "file": "./IOwned.sol",
-          "scope": 1783,
+          "scope": 1606,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 1769,
+        "id": 1592,
         "name": "ImportDirective",
-        "src": "25:22:16"
+        "src": "25:22:12"
       },
       {
         "attributes": {
-          "SourceUnit": 1720,
+          "SourceUnit": 1543,
           "absolutePath": "/Users/tikonoff/projects/rootcore/contracts/interfaces/IERC20Token.sol",
           "file": "./IERC20Token.sol",
-          "scope": 1783,
+          "scope": 1606,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 1770,
+        "id": 1593,
         "name": "ImportDirective",
-        "src": "48:27:16"
+        "src": "48:27:12"
       },
       {
         "attributes": {
           "contractDependencies": [
-            1738
+            1561
           ],
           "contractKind": "contract",
           "documentation": null,
           "fullyImplemented": false,
           "linearizedBaseContracts": [
-            1782,
-            1738
+            1605,
+            1561
           ],
           "name": "ITokenHolder",
-          "scope": 1783
+          "scope": 1606
         },
         "children": [
           {
@@ -143,17 +147,17 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "IOwned",
-                  "referencedDeclaration": 1738,
+                  "referencedDeclaration": 1561,
                   "type": "contract IOwned"
                 },
-                "id": 1771,
+                "id": 1594,
                 "name": "UserDefinedTypeName",
-                "src": "135:6:16"
+                "src": "135:6:12"
               }
             ],
-            "id": 1772,
+            "id": 1595,
             "name": "InheritanceSpecifier",
-            "src": "135:6:16"
+            "src": "135:6:12"
           },
           {
             "attributes": {
@@ -166,7 +170,9 @@
               ],
               "name": "withdrawTokens",
               "payable": false,
-              "scope": 1782,
+              "scope": 1605,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
               "visibility": "public"
             },
             "children": [
@@ -176,7 +182,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "_token",
-                      "scope": 1781,
+                      "scope": 1604,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "contract IERC20Token",
@@ -188,23 +194,23 @@
                         "attributes": {
                           "contractScope": null,
                           "name": "IERC20Token",
-                          "referencedDeclaration": 1719,
+                          "referencedDeclaration": 1542,
                           "type": "contract IERC20Token"
                         },
-                        "id": 1773,
+                        "id": 1596,
                         "name": "UserDefinedTypeName",
-                        "src": "172:11:16"
+                        "src": "172:11:12"
                       }
                     ],
-                    "id": 1774,
+                    "id": 1597,
                     "name": "VariableDeclaration",
-                    "src": "172:18:16"
+                    "src": "172:18:12"
                   },
                   {
                     "attributes": {
                       "constant": false,
                       "name": "_to",
-                      "scope": 1781,
+                      "scope": 1604,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -217,20 +223,20 @@
                           "name": "address",
                           "type": "address"
                         },
-                        "id": 1775,
+                        "id": 1598,
                         "name": "ElementaryTypeName",
-                        "src": "192:7:16"
+                        "src": "192:7:12"
                       }
                     ],
-                    "id": 1776,
+                    "id": 1599,
                     "name": "VariableDeclaration",
-                    "src": "192:11:16"
+                    "src": "192:11:12"
                   },
                   {
                     "attributes": {
                       "constant": false,
                       "name": "_amount",
-                      "scope": 1781,
+                      "scope": 1604,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -243,19 +249,19 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 1777,
+                        "id": 1600,
                         "name": "ElementaryTypeName",
-                        "src": "205:7:16"
+                        "src": "205:7:12"
                       }
                     ],
-                    "id": 1778,
+                    "id": 1601,
                     "name": "VariableDeclaration",
-                    "src": "205:15:16"
+                    "src": "205:15:12"
                   }
                 ],
-                "id": 1779,
+                "id": 1602,
                 "name": "ParameterList",
-                "src": "171:50:16"
+                "src": "171:50:12"
               },
               {
                 "attributes": {
@@ -264,26 +270,26 @@
                   ]
                 },
                 "children": [],
-                "id": 1780,
+                "id": 1603,
                 "name": "ParameterList",
-                "src": "228:0:16"
+                "src": "228:0:12"
               }
             ],
-            "id": 1781,
+            "id": 1604,
             "name": "FunctionDefinition",
-            "src": "148:81:16"
+            "src": "148:81:12"
           }
         ],
-        "id": 1782,
+        "id": 1605,
         "name": "ContractDefinition",
-        "src": "110:121:16"
+        "src": "110:121:12"
       }
     ],
-    "id": 1783,
+    "id": 1606,
     "name": "SourceUnit",
-    "src": "0:232:16"
+    "src": "0:232:12"
   },
   "networks": {},
   "schemaVersion": "1.0.0",
-  "updatedAt": "2018-01-25T20:36:10.147Z"
+  "updatedAt": "2018-01-29T02:36:30.879Z"
 }

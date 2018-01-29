@@ -1,6 +1,7 @@
 # Functional tests
-Tests are conducted on the Kovan test network.
+Tests are conducted on the Kovan test network, January 29 - 31, 2018, @tikonoff
 
+<br>
 
 ## Roles
 
@@ -13,6 +14,8 @@ Tests are conducted on the Kovan test network.
 * Add/remove Contributors to/from Whitelist during Pre-Sale and Sale periods
 * Pause/unpause Sales during Sale period
 * Transfer Ownership of contracts
+
+<br>
 
 ## Periods
 ### Presale – 14 days
@@ -33,21 +36,28 @@ Tests are conducted on the Kovan test network.
 * Does matter only when Hard Cap has not reached
 * Duration: 24 hrs
 
+<br>
 
 ## Accounts
 
-* CrowdSaleController []()
-* Manager []()
-* Beneficiary (MultiSig Wallet) []()
-* Contributors []()
-* WhiteListed Contributors []()
+* Main [0x0030225451B263384Cf8400dff773c196E7eabE1](https://kovan.etherscan.io/address/0x0030225451B263384Cf8400dff773c196E7eabE1)
+* Manager [0x00488ad1711505eA3026DF19955052F1d87121d8](https://kovan.etherscan.io/address/0x00488ad1711505eA3026DF19955052F1d87121d8)
+* Beneficiary (MultiSig Wallet) [0x006e13780f0C43c2446456581580Bae15DBe1f37](https://kovan.etherscan.io/address/0x006e13780f0C43c2446456581580Bae15DBe1f37)
+* Contributors [0x007Ce47aBa1f6cfF4667C9Bf4cFF97d9A9796607](https://kovan.etherscan.io/address/0x007Ce47aBa1f6cfF4667C9Bf4cFF97d9A9796607)
+* WhiteListed Contributors [0x009841Abc21A880Bf9e71C4cEfF7C93785CEb3C8](https://kovan.etherscan.io/address/0x009841Abc21A880Bf9e71C4cEfF7C93785CEb3C8)
+* Complete Stranger [0x00a5F51aD0D357dAd9F899106f33b34436D445d4](https://kovan.etherscan.io/address/0x00a5F51aD0D357dAd9F899106f33b34436D445d4)
+
 
 
 ## Expected behaviour tests
 by roles
 
 ### Owner
- - [] Deploy contract []()
+ - Deploy contracts:
+ 	- [x] in the Future (Pre-Sale has not started yet), beneficiary is RootCore [0xf7d0c6](https://kovan.etherscan.io/tx/0xf7d0c68527f3341de0aa9958b9ec9923d803e25a36d5c9de2d0ac61fbd7500ce)
+ 	- [x] PreSale period (NOW is today + 13 days), beneficiary is RootCore [0x19499d](https://kovan.etherscan.io/tx/0x19499dbdc0a87b75ed8b2b76688d45c6087664027eb96b4411b85ee47c4500d2) 
+ 	- [x] for the Sale (NOW is January 30, 2018), beneficiary is "Beneficiary account" [0xd436be](https://kovan.etherscan.io/tx/0xd436be5c7d4c8230d2601da6252faa903751c57a8e5cd4a824f8fb3d2bbfb1f2) 
+ 	- [x] in the past (sale has over) - <font color="red">deployed with ERROR</font> [0x9902b9](https://kovan.etherscan.io/tx/0x9902b9a52cdb57ef1a94d091548af90417420eaba5b4dcaed69ec1247961e4ac)
  
 ### Contributors
  - [] ContributeETH []()
@@ -70,6 +80,7 @@ by roles
  - [] transferFrom() []()
  - [] approve() []()
  - [] Enable / disable transfers []()
+ - [] Withdraw
 
 ### Smart Token Contract controller
  - [] Enable / disable transfers []()
@@ -87,6 +98,8 @@ by roles
  - [] Sale Soft cap 100.000 ETH has reached 
  - [] Sale Hard cap 110.000 ETH has reached 
 
+
+<br>
 
 ## Unexpected behaviour tests
 
@@ -120,6 +133,8 @@ by roles
  - [] transferFrom() invalid address []()
  - [] transferFrom() tokens from account with insufficient funds []()
  - [] approve() (should be called twice)[]()
+ - [] Withdraw from .... after .... before ...
+ - 
 
 ### Smart Token Contract controller
  - [] Issue tokens from unexpected account []()
