@@ -47,13 +47,6 @@ Tests are conducted on the Kovan test network, January 29 - 31, 2018, @tikonoff
 * WhiteListed Contributors [0x009841Abc21A880Bf9e71C4cEfF7C93785CEb3C8](https://kovan.etherscan.io/address/0x009841Abc21A880Bf9e71C4cEfF7C93785CEb3C8)
 * Complete Stranger [0x00488ad1711505eA3026DF19955052F1d87121d8](https://kovan.etherscan.io/address/0x00488ad1711505eA3026DF19955052F1d87121d8)
 
-<br>
-
-## Mock prerequisites
-
- - TOTAL_ETHER_CAP = 100 ether;
- - PRESALE_MIN_CONTRIBUTION = 0.2 ether; 
- - MAX_CONTRIBUTION = 0.4 ether; 
 
 <br>
 
@@ -68,7 +61,10 @@ Tests are conducted on the Kovan test network, January 29 - 31, 2018, @tikonoff
 	 - [x] SmartToken from Sale period [0x2B334791160C5489219af9c043E6E4eea0B0590A](https://kovan.etherscan.io/address/0x2B334791160C5489219af9c043E6E4eea0B0590A)
 	 - [x] CrowdSaleController, in the Future, beneficiary is "Main Account" [0xf7d0c6](https://kovan.etherscan.io/tx/0xf7d0c68527f3341de0aa9958b9ec9923d803e25a36d5c9de2d0ac61fbd7500ce)
    	 - [x] CrowdSaleController, in the past (sale has over), beneficiary is "Beneficiary account"  - expected ERROR [0x9902b9](https://kovan.etherscan.io/tx/0x9902b9a52cdb57ef1a94d091548af90417420eaba5b4dcaed69ec1247961e4ac) - <font color=coral> Contract deployed with Zero Start time and therefore it is possible to pass test "ContributeETH when Sale is over"</font>
-   	 - [x] Mock Contract (see above) [0x4e28694D16d407c498986C4D8FA49b1AF80c151E](https://kovan.etherscan.io/address/0x4e28694D16d407c498986C4D8FA49b1AF80c151E) - Start time: Jan 30, 2018, 20:00 (UTC)
+   	 - [x] Mock Contract (see above) [0x4e28694D16d407c498986C4D8FA49b1AF80c151E](https://kovan.etherscan.io/address/0x4e28694D16d407c498986C4D8FA49b1AF80c151E) 
+   	 	- Start time: Jan 30, 2018, 20:00 (UTC)
+   	 	- PRESALE_MIN_CONTRIBUTION = 0.2 ether; 
+ 		- MAX_CONTRIBUTION = 0.4 ether; 
  
 ### Manager (as a role)
  - [x] Transfer management [0x72b77d](https://kovan.etherscan.io/tx/0x72b77d80264760a3a84775b49a33a6be57a3aaab99f5e3fe4a693989c4fbdaa5)
@@ -90,10 +86,17 @@ Tests are conducted on the Kovan test network, January 29 - 31, 2018, @tikonoff
 
 ### Contributors
  - [x] ContributeETH [0xfd7923](https://kovan.etherscan.io/tx/0xfd7923dafd1c5dba33768217bff7aec493502b622d16d7da345ec801adb119d8)
+ - [x] ContributeETH with amount exceeding MAX_CONTRIBUTION from Whitelisted account [0x3a93a4](https://kovan.etherscan.io/tx/0x3a93a43f8c231e905db71cfe77f7b02017b1858e33508da8c46b463da921dba4) 
+ - [x] ContributeETH when Soft MaxCap is reached [0xac7dcc](https://kovan.etherscan.io/tx/0xac7dcce385445c8460b22ecdc2d8e9c8ce0330e53ba75eb81391032f6965812b)
 
 ### System events
- - [] PreSale period: GraceDuration is ON when SoftCap is reached 
- - [] Sale period: GraceDuration is ON when SoftCap is reached
+- PreSale contract [0x4e28694D16d407c498986C4D8FA49b1AF80c151E](https://kovan.etherscan.io/address/0x4e28694D16d407c498986C4D8FA49b1AF80c151E)
+	- [x] SoftCap has reached [0x4becf0](https://kovan.etherscan.io/tx/0x4becf0f5c64f24ecd5de05b7a04e89103caf253a19e71dd7b061f67f877edafc)
+	- [x] HardCap has reached [0xb3f28f](https://kovan.etherscan.io/tx/0xb3f28f5825a0472cbc6006e039cb4c32c8b2cddb7318407b19f2c43b9caa59f3)
+
+- Sale contract [0x40D4eC3ad4C8e4636088C4A08791922aeca9e4E4](https://kovan.etherscan.io/address/0x40D4eC3ad4C8e4636088C4A08791922aeca9e4E4) 
+	- [x] SoftCap has reached [0x1a19a8](https://kovan.etherscan.io/tx/0x1a19a8bcd64dcd35bb76fed447d15412f37a5b49e7544cf99fb6d249e36bc584)
+	- [x] HardCap has reached [0xd4a617](https://kovan.etherscan.io/tx/0xd4a617dca83acef27d9a563dc89bf818a0c88db3cd37ebf05fef22c816753a0a)
 
 <br>
 
@@ -104,17 +107,16 @@ Tests are conducted on the Kovan test network, January 29 - 31, 2018, @tikonoff
  - [x] ContributePreSale when Sale is paused [0x77bd64](https://kovan.etherscan.io/tx/0x77bd64cacb2af60f24013660929367bca7119040f6532a7edff759557e3e6559)
  - [x] ContributePreSale with less than MIN_CONTRIBUTION [0xecd6d3](https://kovan.etherscan.io/tx/0xecd6d3d4535120d50dd8424e1917501646d59c0ec0683675d5aa7454e1132b0a)
  - [x] ContributePreSale with gas price > 50 gWeis [0x52c4e7](https://kovan.etherscan.io/tx/0x52c4e7073164f8da91a691a17550c007c7095f475a980c81fbc94c8ed0b671b2)
- - [] ContributePreSale later than NOW() []() - tomorrow
+ - [x] ContributePreSale later than NOW() [0xf56613](https://kovan.etherscan.io/tx/0xf566132a3df8cd8225f1708f631849ec530d38a1f1671f4643793d4edc6bb7d0)
  - [x] ContributePreSale from non-Whitelisted account [0xa451d7d](https://kovan.etherscan.io/tx/0xa451d7d9ebebebc4a407392b6b4e5633b7c5153bdb376d34b11876137364df23)
- - [] ContributePreSale when Soft MaxCap is reached []() - need one more contract with cap 0.5eth
- - [] ContributePreSale when Hard MaxCap is reached []() - need one more contract with cap 0.5eth
+ - [x] ContributePreSale when Soft MaxCap is reached [0xd92758](https://kovan.etherscan.io/tx/0xd9275819b718844c653aa2692acd00da42a7efbcd2d7282854924eaf366f59f1) 
+ - [x] ContributePreSale when Hard MaxCap is reached [0x8790a2](https://kovan.etherscan.io/tx/0x8790a2217ad8ddc4d2016bbf192e38bf283e704f00cad8e38da1126f9875e632)
  - -
  - [x] ContributeETH when Sale is paused [0xbf7862](https://kovan.etherscan.io/tx/0xbf7862710e125f55f89118adafa5dd5b9553016225a24783612e8d7746b1e486)
  - [x] ContributeETH with gas price > 50 gWeis [0xf8fd80](https://kovan.etherscan.io/tx/0xf8fd80f8684f3da44026be29cbe87caece23610e945fed50fef08fc5f3631e75)
  - [x] ContributeETH later than NOW() + 14 days [0xcf6bde](https://kovan.etherscan.io/tx/0xcf6bdee079dd2ff59c12f0c8e557decdd6102021eadde2d78aab9f454d9291d1) <font color=coral>"contract from the past" was deployed with zero start time. Probably that was a reason why this test didn't return an error. </font>
  - [x] ContributeETH earlier than NOW() [0xa451d7](https://kovan.etherscan.io/tx/0xa451d7d9ebebebc4a407392b6b4e5633b7c5153bdb376d34b11876137364df23)
- - [] ContributeETH with amount exceeding MAX_CONTRIBUTION from non-Whitelisted account []() 
- - [] ContributeETH when Soft MaxCap is reached []()
+ - [x] ContributeETH with amount exceeding MAX_CONTRIBUTION from non-Whitelisted account [0xfe18f1](https://kovan.etherscan.io/tx/0xfe18f1954bd791b12ee2b9bfb9ccb8fde8cf7469e5ab81f634af4550dbcbcfc4) 
  - [x] ContributeETH when Hard MaxCap is reached [0xc7dca1](https://kovan.etherscan.io/tx/0xc7dca1aec423f63e2c435998694aee39ee6993a503e67e4b93f61a2250d6bde0)
 
 
@@ -133,6 +135,7 @@ Tests are conducted on the Kovan test network, January 29 - 31, 2018, @tikonoff
  - [x] Remove non-existing account from WhiteList [0x149919a5](https://kovan.etherscan.io/tx/0x149919a5b8fc1bbdfc825c85a9431f3857a1776bd016fde876150033f96f5e4b)
  - [x] Pause already paused Sale [0xf9aac8](https://kovan.etherscan.io/tx/0xf9aac81be04e2496a9b0111f4014e432dd07e70fbb8686cead2c0fdd61fbff87)
  - [x] Unpause on-going Sale [0x6f1265](https://kovan.etherscan.io/tx/0x6f126548875e199ab2acc574aa3b6f39b5d8ae36e7ebb9c00746a2306d19f949)
+ - [x] ContributeFiat to Beneficiary account [0x84f42e](https://kovan.etherscan.io/tx/0x84f42ee51554933ced0dd572a77278de59d5b282424cbdd3392639a6e80c4795)
  - [x] ContributeFiat when Sale is paused [0x57deff](https://kovan.etherscan.io/tx/0x57deff4d6d047cf11e1dd09412137bdf120e5f61f72a48a2ac57c0d801e57d38)
  - [x] ContributeFiat before Sale or after Sale is finished [0xf29e5f8](https://kovan.etherscan.io/tx/0xf29e5f82c2d395209e02684079594b88631afc974f55a4477d411065b45f8a47)
 
