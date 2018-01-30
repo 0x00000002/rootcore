@@ -85,6 +85,7 @@ Tests are conducted on the Kovan test network, January 29 - 31, 2018, @tikonoff
 
 
 ### Contributors
+ - [x] ContributePreSale [a3022d](https://kovan.etherscan.io/tx/0xa3022d0fb7ff55bbeed57cbd5a7cf73443951b86bb722b6e353082ca6496b6b1)
  - [x] ContributeETH [0xfd7923](https://kovan.etherscan.io/tx/0xfd7923dafd1c5dba33768217bff7aec493502b622d16d7da345ec801adb119d8)
  - [x] ContributeETH with amount exceeding MAX_CONTRIBUTION from Whitelisted account [0x3a93a4](https://kovan.etherscan.io/tx/0x3a93a43f8c231e905db71cfe77f7b02017b1858e33508da8c46b463da921dba4) 
  - [x] ContributeETH when Soft MaxCap is reached [0xac7dcc](https://kovan.etherscan.io/tx/0xac7dcce385445c8460b22ecdc2d8e9c8ce0330e53ba75eb81391032f6965812b)

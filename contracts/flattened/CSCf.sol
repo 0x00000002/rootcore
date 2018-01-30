@@ -309,7 +309,7 @@ contract IOwned {
     Provides support and utilities for contract ownership
 */
 contract Owned is IOwned {
-    address public owner;
+    address public owner;∑
     address public newOwner;
 
     event OwnerUpdate(address _prevOwner, address _newOwner);
@@ -632,7 +632,7 @@ contract CrowdsaleController is SmartTokenController, Managed, Pausable {
     
     //Presale constants
     uint256 public constant PRESALE_DURATION = 14 days;               // pressale duration
-    uint256 public constant PRESALE_MIN_CONTRIBUTION = 200 ether;     // pressale min contribution
+    uint256 public constant PRESALE_MIN_CONTRIBUTION = 0 ether;     // pressale min contribution
     
     //Token constants
     string public constant TOKEN_NAME = "Rootcoin"; //Token name
