@@ -68,15 +68,15 @@ SmartToken.sol lines 2,3,4,5,13 SmartTokenController.sol lines 2,3
 TokenHolder.sol lines 2,3,4,5
 - **visibility is not specified default to public** - `Migrations()`          [github](https://github.com/ethereum/solidity/issues/2608)
 migrations.sol line 12 CrowdsaleController.sol line 57 ERC20Token.sol line 27
-Managed.sol line 15 Owned.sol line 16 SmartToken.sol lines 31 SmartTokenController.sol line 27 TokenHolder.sol line 18 Utils.solline 10
+Managed.sol line 15 Owned.sol line 16 SmartToken.sol lines 31 SmartTokenController.sol line 27 TokenHolder.sol line 18 Utils.sol line 10
 - **restricted explicitly mark visibility in function** - `Migrations()`          [github](https://github.com/ethereum/solidity/issues/2608)
 migrations.sol line 16, TestCrowdsaleController.sol line 11, TestERC20Token.sol line 9
 CrowdsaleController.sol line 58,253 Pausable.sol line 34,43 SmartToken.sol lines 32
 SmartTokenController.sol line 28
 - **function shadows an existing declaration** - `name()`          [github](https://github.com/ethereum/solidity/issues/2608)
-IERC20Token.sol lines 8,9,10,11 Owned.sol line 8
+IERC20Token.sol lines 8,9,10,11 IOwned.sol line 8
 - **state mutibility can be restricted to pure** - `name()`          [stackexchange](https://ethereum.stackexchange.com/questions/27181/remix-warnings-state-mutability-and-public-visibility)
-IERC20Token.sol lines 8,9,10,11,12,13 Owned.sol line 8
+IERC20Token.sol lines 8,9,10,11,12,13 IOwned.sol line 8
 - **avoid time based decisions** - `now`          [stackexchange](https://ethereum.stackexchange.com/questions/31993/is-it-secure-to-rely-on-now-or-block-timestamp-for-the-deadline-of-an-ico)
 CrowdsaleController.sol lines 76,82,89
 - **function order is incorrect, public function cannot
