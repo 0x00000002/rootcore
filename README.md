@@ -1,4 +1,5 @@
-﻿# Rootcore Crowdsale Token Sale
+﻿[![Coverage Status](https://coveralls.io/repos/github/ryu9827/rootcore/badge.svg?branch=master)](https://coveralls.io/github/ryu9827/rootcore?branch=master)
+# Rootcore Crowdsale Token Sale
 In this document, we describe the token sale specification and implementation,
 and give an overview over the smart contracts structure.
 
