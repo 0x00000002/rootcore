@@ -11,4 +11,24 @@
 - **function shadows an existing declaration** - `Best practice` Examples: [#L8-11](https://github.com/tikonoff/rootcore/blob/master/contracts/interfaces/IERC20Token.sol), [#L8](https://github.com/tikonoff/rootcore/blob/master/contracts/interfaces/IOwned.sol) ..[View on GitHub](https://github.com/tikonoff/rootcore/issues/5)
 - **state mutibility can be restricted to pure** - ` v` Examples:
 [#L8-13](https://github.com/tikonoff/rootcore/blob/master/contracts/interfaces/IERC20Token.sol), [#L8](https://github.com/tikonoff/rootcore/blob/master/contracts/interfaces/IOwned.sol) ..[View on GitHub](https://github.com/tikonoff/rootcore/issues/6)
-- **avoid time based decisions** - `now`
+- **avoid time based decisions** - `Security` Examples:
+[#L76,82,89](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/7)
+- **function order is incorrect, public function cannot
+  go after private function** - `Best practice`  
+[#L145,161,176,193,211](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/8)
+- **comma must be separated from next element
+  by space** - `Best practice`
+  [#L196](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/9)
+- **check result of send** - `Security`
+  [#L243](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/10)
+- **possible reentrancy vulnerabilities avoid state changes after transfer** - `Security`
+  [#L244](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/11)
+- **Spelling ?** - `Style`
+  [#L133,247](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/12)
+- **fallback function cannot go after private function** - `Best practice`
+  [#L133,247](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/13)
+  - **event and function names must be different** - `Best practice`
+  [#L44](https://github.com/tikonoff/rootcore/blob/master/contracts/ERC20Token.sol), [#L33,43](https://github.com/tikonoff/rootcore/blob/master/contracts/Pausable.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/14)
+  - **state mutibility can be restricted to pure** - `safeSub()`
+  [#L55,68](https://github.com/tikonoff/rootcore/blob/master/contracts/Utils.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/15)
+  
