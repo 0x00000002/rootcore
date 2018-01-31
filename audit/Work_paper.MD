@@ -1,7 +1,7 @@
 
 | Contract |          Function           | Visibility | Constant | Returns |  Modifiers  | Static Analysis | Test Coverage | Functional Analysis |
 |----------|-----------------------------|------------|----------|---------|-------------|-----------------|---------------|---------------------|
-| Managed  | Managed()                   | public     | false    |         |             | :white_check_mark :             | [√]           | [√]                 |
+| Managed  | Managed()                   | public     | false    |         |             | :white_check_mark:             | [√]           | [√]                 |
 | Managed  | transferManagement(address) | public     | false    |         | managerOnly | [√]             | [√]           | [√]                 |
 | Managed  | acceptManagement()          | public     | false    |         |             | [√]             | [√]           | [√]                 |
 
