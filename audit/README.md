@@ -158,6 +158,7 @@ uint public last_completed_migration;
 ``` 
 totalEtherContributed = safeAdd(totalEtherContributed, msg.value); // update the total contribution amount ```  
 [View on GitHub](https://github.com/tikonoff/rootcore/issues/11)
+``` 
 
 ### Critical
 - None found
