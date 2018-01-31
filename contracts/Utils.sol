@@ -1,4 +1,4 @@
-pragma solidity ^0.4.15;
+saffepragma solidity ^0.4.15;
 
 /*
     Utilities & Common Modifiers

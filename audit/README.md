@@ -64,107 +64,48 @@ The audit report is focused on the following key areas - though this is not an e
 
 <!-- Here goes a list of issues -->
 ### Minor
-- **use of constant is deprecated** - `Best practice` [rootcore/blob/master/contracts/CrowdsaleController.sol](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) Line 21-26,31,32,35-37,125 
-
-``` 
-	uint256 public constant DURATION = 14 days; 
-	uint256 public constant TOKEN_PRICE_N = 1; 
-	uint256 public constant TOKEN_PRICE_D = 1000; 
-	uint256 public constant MAX_GAS_PRICE = 50000000000 wei; 
-	uint256 public constant MAX_CONTRIBUTION = 40 ether; 
-	uint256 public constant SOFTCAP_GRACE_DURATION = 10;   //86400; 
-	uint256 public TOTAL_ETHER_CAP ...
-``` 
-
-[View on GitHub](https://github.com/tikonoff/rootcore/issues/16)
-
-- **state mutibility can be restricted to pure** -  [rootcore/blob/master/contracts/Utils.sol](https://github.com/tikonoff/rootcore/blob/master/contracts/Utils.sol) Line 55,68 
-
-``` 
-function safeSub(uint256 _x, uint256 _y) internal returns (uint256) { 
-	assert(_x >= _y); 
-	return _x - _y; 
-} 
-
-function safeMul(uint256 _x, uint256 _y) internal returns (uint256) { 
-	uint256 z = _x * _y; 
-	assert(_x == 0 || z / _x == _y); 
-	return z; 
-} 
-```  
-[View on GitHub](https://github.com/tikonoff/rootcore/issues/15)
-
-- **event and function names must be different** - `Best practice` [rootcore/blob/master/contracts/ERC20Token.sol](https://github.com/tikonoff/rootcore/blob/master/contracts/ERC20Token.sol) Line 44 
-
-``` 
-function transfer(address _to, uint256 _value) public validAddress(_to) returns (bool success) { 
-	balanceOf[msg.sender] = safeSub(balanceOf[msg.sender], _value); 
-	balanceOf[_to] = safeAdd(balanceOf[_to], _value); 
-	Transfer(msg.sender, _to, _value); 
-	return true; 
-} 
-``` 
-[rootcore/blob/master/contracts/Pausable.sol](https://github.com/tikonoff/rootcore/blob/master/contracts/Pausable.sol) ... [View on GitHub](https://github.com/tikonoff/rootcore/issues/14)
-
-- **Possible spelling error** -  [rootcore/blob/master/contracts/CrowdsaleController.so](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) Line 133,247 
-
-``` 
-function upadateContributorsCount(uint256 _tokenAmount) private { 
-	if (token.balanceOf(msg.sender) == _tokenAmount ) numOfContributors++; 
-} 
-upadateContributorsCount(tokenAmount); 
-```  
-[View on GitHub](https://github.com/tikonoff/rootcore/issues/12)
-
-- **comma must be separated from next element by space** - `Best practice` [rootcore/blob/master/contracts/CrowdsaleController.sol](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) Line 196,215 
-
-``` 
-between(safeSub(startTime,PRESALE_DURATION), startTime) between(safeSub(startTime,PRESALE_DURATION), safeAdd(startTime, DURATION)) 
-```  
-[View on GitHub](https://github.com/tikonoff/rootcore/issues/9)
-
-- **visibility is not specified, default to public** - `Security`, Best practice` [rootcore/blob/master/contracts/helpers/Migrations.sol](https://github.com/tikonoff/rootcore/blob/master/contracts/helpers/Migrations.sol) Line 12 
-
-``` 
-function Migrations() { owner = msg.sender; } 
-``` 
-[rootcore/blob/master/contracts/CrowdsaleController.sol](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) Line 57 
-
-``` 
-function CrowdsaleController(uint256 _startTime, address _beneficiary) SmartTokenController(new SmartToken(TOKEN_NAME, TOKEN_SYM, TOKEN_DEC)) validAddress(_beneficiary) ... 
-```
-[View on GitHub](https://github.com/tikonoff/rootcore/issues/3)
-
-- **should use "" for strings and import** - `Best practice` [rootcore/blob/master/contracts/helpers/TestCrowdsaleController.sol](https://github.com/tikonoff/rootcore/blob/master/contracts/helpers/TestCrowdsaleController.sol) Line 5 
-
-```
-import '../CrowdsaleController.sol';  
-``` 
-[View on GitHub](https://github.com/tikonoff/rootcore/issues/2)
-
-- **var's should be in mixedCase** - `Best practice` [rootcore/blob/master/contracts/helpers/Migrations.sol](https://github.com/tikonoff/rootcore/blob/gabrieldojo/contracts/helpers/Migrations.sol) Line 5 
-
-```
-uint public last_completed_migration;  
-```
-[View on GitHub](https://github.com/tikonoff/rootcore/issues/1)
-
+### Minor
+- **var's should be in mixedCase** - `Best practice` Examples: [#L5, 20](https://github.com/tikonoff/rootcore/blob/master/contracts/helpers/Migrations.sol) .. [View on Github](https://github.com/tikonoff/rootcore/issues/1)
+- **should use "" for stings and import** - `Best practice` Examples: [#L2](https://github.com/tikonoff/rootcore/blob/master/contracts/helpers/TestCrowdsaleController.sol),[#L2](https://github.com/tikonoff/rootcore/blob/master/contracts/helpers/TestUtils.sol),[#L2,3](https://github.com/tikonoff/rootcore/blob/master/contracts/interfaces/ISmartToken.sol),[#L2,3](https://github.com/tikonoff/rootcore/blob/master/contracts/interfaces/ITokenHolder.sol),[#2-7](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol),[#L2,3,9,11](https://github.com/tikonoff/rootcore/blob/master/contracts/ERC20Token.sol),[#L2](https://github.com/tikonoff/rootcore/blob/master/contracts/Owned.sol),[#L2](https://github.com/tikonoff/rootcore/blob/master/contracts/Pausable.sol),[#L2-5,13](https://github.com/tikonoff/rootcore/blob/master/contracts/SmartToken.sol),[#L2,3](https://github.com/tikonoff/rootcore/blob/master/contracts/SmartTokenController.sol),[#L2-5](https://github.com/tikonoff/rootcore/blob/master/contracts/TokenHolder.sol).. [View on Github](https://github.com/tikonoff/rootcore/issues/2)
+- **visibility is not specified default to public** - `Best practice/Security` Examples: [#L12](https://github.com/tikonoff/rootcore/blob/master/contracts/helpers/Migrations.sol),[#L57](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol),[#L27](https://github.com/tikonoff/rootcore/blob/master/contracts/ERC20Token.sol),[#L15](https://github.com/tikonoff/rootcore/blob/master/contracts/Managed.sol),[#L16](https://github.com/tikonoff/rootcore/blob/master/contracts/Owned.sol),[#L31](https://github.com/tikonoff/rootcore/blob/master/contracts/SmartToken.sol),[#L27](https://github.com/tikonoff/rootcore/blob/master/contracts/SmartTokenController.sol),[#L18](https://github.com/tikonoff/rootcore/blob/master/contracts/TokenHolder.sol),[#L10](https://github.com/tikonoff/rootcore/blob/master/contracts/Utils.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/3)
+- **restricted explicitly mark visibility in function** - `Best practice/Security` Examples: [#L16](https://github.com/tikonoff/rootcore/blob/master/contracts/helpers/Migrations.sol), [#L11](https://github.com/tikonoff/rootcore/blob/master/contracts/helpers/TestCrowdsaleController.sol), [#L9](https://github.com/tikonoff/rootcore/blob/master/contracts/helpers/TestERC20Token.sol), [#L58,253](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol), [#L34,43](https://github.com/tikonoff/rootcore/blob/master/contracts/Pausable.sol), [#L32](https://github.com/tikonoff/rootcore/blob/master/contracts/SmartToken.sol), [#L28](https://github.com/tikonoff/rootcore/blob/master/contracts/SmartTokenController.sol) ..[View on GitHub](https://github.com/tikonoff/rootcore/issues/4)
+- **function shadows an existing declaration** - `Best practice` Examples: [#L8-11](https://github.com/tikonoff/rootcore/blob/master/contracts/interfaces/IERC20Token.sol), [#L8](https://github.com/tikonoff/rootcore/blob/master/contracts/interfaces/IOwned.sol) ..[View on GitHub](https://github.com/tikonoff/rootcore/issues/5)
+- **state mutibility can be restricted to pure** - ` v` Examples:
+[#L8-13](https://github.com/tikonoff/rootcore/blob/master/contracts/interfaces/IERC20Token.sol), [#L8](https://github.com/tikonoff/rootcore/blob/master/contracts/interfaces/IOwned.sol) ..[View on GitHub](https://github.com/tikonoff/rootcore/issues/6)
+- **avoid time based decisions** - `Security` Examples:
+[#L76,82,89](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/7)
+- **function order is incorrect, public function cannot
+  go after private function** - `Best practice`  
+[#L145,161,176,193,211](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/8)
+- **comma must be separated from next element
+  by space** - `Best practice`
+  [#L196,215](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/9)
+- **check result of send** - `Security`
+  [#L243](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/10)
+- **Spelling ?** - `Style`
+  [#L133,247](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/12)
+- **fallback function cannot go after private function** - `Best practice`
+  [#L133,247](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/13)
+- **event and function names must be different** - `Best practice`
+  [#L44](https://github.com/tikonoff/rootcore/blob/master/contracts/ERC20Token.sol), [#L33,43](https://github.com/tikonoff/rootcore/blob/master/contracts/Pausable.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/14)
+- **state mutibility can be restricted to pure** - `Best practice`
+  [#L55,68](https://github.com/tikonoff/rootcore/blob/master/contracts/Utils.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/15)
+- **use of constant is deprecated** - `Best practice`
+  [#L21-26,31,32,35-37,125](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol), [#L12,16,20](https://github.com/tikonoff/rootcore/blob/master/contracts/helpers/TestUtils.sol), [#L8-13](https://github.com/tikonoff/rootcore/blob/master/contracts/interfaces/IERC20Token.sol), [#L8](https://github.com/tikonoff/rootcore/blob/master/contracts/interfaces/IOwned.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/16)
+- **Version of pragma is not latest** - `Best practice`
+  ..[View on Github](https://github.com/tikonoff/rootcore/issues/18)
 ### Moderate
 - None found
-- 
+-
 ### Major
-- **possible reentrancy vulnerabilities avoid state changes after transfer** - `Security`, Best practice` [rootcore/blob/master/contracts/CrowdsaleController.so](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) LIne 244 
-
-``` 
-totalEtherContributed = safeAdd(totalEtherContributed, msg.value); // update the total contribution amount ```  
-[View on GitHub](https://github.com/tikonoff/rootcore/issues/11)
-``` 
+- **possible reentrancy vulnerabilities avoid state changes after transfer** - `Security`
+  [#L244](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/11)
 
 ### Critical
 - None found
 
 
-## Dynamic Analysis 
+## Dynamic Analysis
 Coverage: 94.69%
 Coverage screenshot
 
@@ -179,4 +120,4 @@ Upon finalization of the contracts to be used by Wings, the contracts were asses
 
 
 ## Conclusion
-Of the issues we have raised all of them are minor. This crowdsale has a low risk of ethereum being hacked or stolen. 
+Of the issues we have raised all of them are minor. This crowdsale has a low risk of ethereum being hacked or stolen.
