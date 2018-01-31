@@ -84,10 +84,10 @@ Coverage screenshot
 <img alt="coverage screenshot" src="http://www.brucelihunting4ajob.info/img/tmp/Coverage_screenshot.png">
 
 build address : [Link](https://travis-ci.org/ryu9827/rootcore/builds/334233219)
+
+## Gas Consumption
+
+Upon finalization of the contracts to be used by Wings, the contracts were assessed on the gas usage of each function to ensure there aren't any unforeseen issues with exceeding the block size GasLimit. A detailed report can be found in [Gas_Consumption.md](https://github.com/tikonoff/rootcore/blob/master/audit/Gas_consumption_report.md).
+
+
 ## Conclusion
-
-Overall we have been fully satisfied with the resulting contracts following the audit feedback period. We took part in carefully reviewing all source code provided, including deployment testing.
-
-We are pleased to report that no potential vulnerabilities were uncovered during the audit. That the token complies with the recently finalised ERC20 Token Standards. The code has excellent testability and the developers have followed common best practices.
-
-Of the issues we have raised all of them are minor. This crowdsale has a low risk of ethereum being hacked or stolen. 
