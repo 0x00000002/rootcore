@@ -57,48 +57,38 @@ The audit report is focused on the following key areas - though this is not an e
 ## Findings
 <!-- Here goes a list of issues -->
 ### Minor
-#### Stylistic inadequacies
-- **var should be in mixedCase** - `last_completed_migration`   [style guide](http://solidity.readthedocs.io/en/develop/style-guide.html)
-migrations.sol lines 5, 20
-- **should use ""** - `import '../CrowdsaleController.sol'`    [style guide](http://solidity.readthedocs.io/en/develop/style-guide.html)
-TestCrowdsaleController.sol line 2, TestUtils.sol line 2 ISmartToken.sol lines 2,3
-ITokenHolder.sol lines 2,3 CrowdsaleController.sol lines 2,3,4,5,6,7
-ERC20Token.sol lines 2,3,9,11 Owned.sol line 2 Pausable.sol line 2
-SmartToken.sol lines 2,3,4,5,13 SmartTokenController.sol lines 2,3
-TokenHolder.sol lines 2,3,4,5
-- **visibility is not specified default to public** - `Migrations()`          [github](https://github.com/ethereum/solidity/issues/2608)
-migrations.sol line 12 CrowdsaleController.sol line 57 ERC20Token.sol line 27
-Managed.sol line 15 Owned.sol line 16 SmartToken.sol lines 31 SmartTokenController.sol line 27 TokenHolder.sol line 18 Utils.sol line 10
-- **restricted explicitly mark visibility in function** - `Migrations()`          [github](https://github.com/ethereum/solidity/issues/2608)
-migrations.sol line 16, TestCrowdsaleController.sol line 11, TestERC20Token.sol line 9
-CrowdsaleController.sol line 58,253 Pausable.sol line 34,43 SmartToken.sol lines 32
-SmartTokenController.sol line 28
-- **function shadows an existing declaration** - `name()`          [github](https://github.com/ethereum/solidity/issues/2608)
-IERC20Token.sol lines 8,9,10,11 IOwned.sol line 8
-- **state mutibility can be restricted to pure** - `name()`          [stackexchange](https://ethereum.stackexchange.com/questions/27181/remix-warnings-state-mutability-and-public-visibility)
-IERC20Token.sol lines 8,9,10,11,12,13 IOwned.sol line 8
-- **avoid time based decisions** - `now`          [stackexchange](https://ethereum.stackexchange.com/questions/31993/is-it-secure-to-rely-on-now-or-block-timestamp-for-the-deadline-of-an-ico)
-CrowdsaleController.sol lines 76,82,89
+- **var's should be in mixedCase** - `Best practice` Examples: [#L5, 20](https://github.com/tikonoff/rootcore/blob/master/contracts/helpers/Migrations.sol) .. [View on Github](https://github.com/tikonoff/rootcore/issues/1)
+- **should use "" for stings and import** - `Best practice` Examples: [#L2](https://github.com/tikonoff/rootcore/blob/master/contracts/helpers/TestCrowdsaleController.sol),[#L2](https://github.com/tikonoff/rootcore/blob/master/contracts/helpers/TestUtils.sol),[#L2,3](https://github.com/tikonoff/rootcore/blob/master/contracts/interfaces/ISmartToken.sol),[#L2,3](https://github.com/tikonoff/rootcore/blob/master/contracts/interfaces/ITokenHolder.sol),[#2-7](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol),[#L2,3,9,11](https://github.com/tikonoff/rootcore/blob/master/contracts/ERC20Token.sol),[#L2](https://github.com/tikonoff/rootcore/blob/master/contracts/Owned.sol),[#L2](https://github.com/tikonoff/rootcore/blob/master/contracts/Pausable.sol),[#L2-5,13](https://github.com/tikonoff/rootcore/blob/master/contracts/SmartToken.sol),[#L2,3](https://github.com/tikonoff/rootcore/blob/master/contracts/SmartTokenController.sol),[#L2-5](https://github.com/tikonoff/rootcore/blob/master/contracts/TokenHolder.sol).. [View on Github](https://github.com/tikonoff/rootcore/issues/2)
+- **visibility is not specified default to public** - `Best practice/Security` Examples: [#L12](https://github.com/tikonoff/rootcore/blob/master/contracts/helpers/Migrations.sol),[#L57](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol),[#L27](https://github.com/tikonoff/rootcore/blob/master/contracts/ERC20Token.sol),[#L15](https://github.com/tikonoff/rootcore/blob/master/contracts/Managed.sol),[#L16](https://github.com/tikonoff/rootcore/blob/master/contracts/Owned.sol),[#L31](https://github.com/tikonoff/rootcore/blob/master/contracts/SmartToken.sol),[#L27](https://github.com/tikonoff/rootcore/blob/master/contracts/SmartTokenController.sol),[#L18](https://github.com/tikonoff/rootcore/blob/master/contracts/TokenHolder.sol),[#L10](https://github.com/tikonoff/rootcore/blob/master/contracts/Utils.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/3)
+- **restricted explicitly mark visibility in function** - `Best practice/Security` Examples: [#L16](https://github.com/tikonoff/rootcore/blob/master/contracts/helpers/Migrations.sol), [#L11](https://github.com/tikonoff/rootcore/blob/master/contracts/helpers/TestCrowdsaleController.sol), [#L9](https://github.com/tikonoff/rootcore/blob/master/contracts/helpers/TestERC20Token.sol), [#L58,253](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol), [#L34,43](https://github.com/tikonoff/rootcore/blob/master/contracts/Pausable.sol), [#L32](https://github.com/tikonoff/rootcore/blob/master/contracts/SmartToken.sol), [#L28](https://github.com/tikonoff/rootcore/blob/master/contracts/SmartTokenController.sol) ..[View on GitHub](https://github.com/tikonoff/rootcore/issues/4)
+- **function shadows an existing declaration** - `Best practice` Examples: [#L8-11](https://github.com/tikonoff/rootcore/blob/master/contracts/interfaces/IERC20Token.sol), [#L8](https://github.com/tikonoff/rootcore/blob/master/contracts/interfaces/IOwned.sol) ..[View on GitHub](https://github.com/tikonoff/rootcore/issues/5)
+- **state mutibility can be restricted to pure** - ` v` Examples:
+[#L8-13](https://github.com/tikonoff/rootcore/blob/master/contracts/interfaces/IERC20Token.sol), [#L8](https://github.com/tikonoff/rootcore/blob/master/contracts/interfaces/IOwned.sol) ..[View on GitHub](https://github.com/tikonoff/rootcore/issues/6)
+- **avoid time based decisions** - `Security` Examples:
+[#L76,82,89](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/7)
 - **function order is incorrect, public function cannot
-  go after private function** - `addToWhitelist()`          [github](https://github.com/ethereum/solidity/issues/2608)
-CrowdsaleController.sol lines 145,161,176,193,211
+  go after private function** - `Best practice`  
+[#L145,161,176,193,211](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/8)
 - **comma must be separated from next element
-  by space** - `(startTime,PRESALE_DURATION)`          [style guide](http://solidity.readthedocs.io/en/develop/style-guide.html)
-  CrowdsaleController.sol line 196
-  - **check result of send** - `send`          [solidity docs](http://solidity.readthedocs.io/en/develop/common-patterns.html#withdrawal-pattern)
-  CrowdsaleController.sol line 243
-  - **possible reentrancy vulnerabilities avoid state changes after transfer** - `totalEtherContributed`          [github](https://github.com/ethereum/solidity/issues/2608)
-  CrowdsaleController.sol line 244
-  - **Spelling ?** - `upadateContributorsCount`          [github](https://github.com/ethereum/solidity/issues/2608)
-  CrowdsaleController.sol line 247
-  - **fallback function cannot go after private function** - `function()`          [github](https://github.com/ethereum/solidity/issues/2608)
-  CrowdsaleController.sol line 253
-  - **event and function names must be different** - `transfer()`          [github](https://github.com/ethereum/solidity/issues/2608)
-  ERC20Token.sol line 44 Pausable.sol line 34,43
-  - **state mutibility can be restricted to pure** - `safeSub()`          [stackexchange](https://ethereum.stackexchange.com/questions/27181/remix-warnings-state-mutability-and-public-visibility)
-  Utils.sol lines 55,68
-
-  - [ ] Not Fixed
+  by space** - `Best practice`
+  [#L196,215](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/9)
+- **check result of send** - `Security`
+  [#L243](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/10)
+- **possible reentrancy vulnerabilities avoid state changes after transfer** - `Security`
+  [#L244](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/11)
+- **Spelling ?** - `Style`
+  [#L133,247](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/12)
+- **fallback function cannot go after private function** - `Best practice`
+  [#L133,247](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/13)
+- **event and function names must be different** - `Best practice`
+  [#L44](https://github.com/tikonoff/rootcore/blob/master/contracts/ERC20Token.sol), [#L33,43](https://github.com/tikonoff/rootcore/blob/master/contracts/Pausable.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/14)
+- **state mutibility can be restricted to pure** - `Best practice`
+  [#L55,68](https://github.com/tikonoff/rootcore/blob/master/contracts/Utils.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/15)
+- **use of constant is deprecated** - `Best practice`
+  [#L21-26,31,32,35-37,125](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol), [#L12,16,20](https://github.com/tikonoff/rootcore/blob/master/contracts/helpers/TestUtils.sol), [#L8-13](https://github.com/tikonoff/rootcore/blob/master/contracts/interfaces/IERC20Token.sol), [#L8](https://github.com/tikonoff/rootcore/blob/master/contracts/interfaces/IOwned.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/16)
+- **Version of pragma is not latest** - `Best practice`
+  ..[View on Github](https://github.com/tikonoff/rootcore/issues/18)
+- [ ] Not Fixed
 ### Moderate
 - None found
 ### Major
