@@ -9,7 +9,7 @@
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |      Contract       |               Function               | Visibility | Constant | Returns |                                  Modifiers                                   | Static Ana | Coverage | Func Ana |
 |---------------------|--------------------------------------|------------|----------|---------|------------------------------------------------------------------------------|------------|----------|----------|
-| CrowdsaleController | CrowdsaleController(uint256,address) | public     | false    |         | SmartTokenController,validAddress,earlierThan                                | :white_check_mark:        | [√]      | [√]      |
+| CrowdsaleController | CrowdsaleController(uint256,address) | public     | false    |         | SmartTokenController,validAddress,earlierThan                                | [√]        | [√]      | [√]      |
 | CrowdsaleController | computeReturn(uint256)               | public     | true     | uint256 |                                                                              | [√]        | [√]      | [√]      |
 | CrowdsaleController | upadateContributorsCount(uint256)    | private    | false    |         |                                                                              | [√]        | [√]      | [√]      |
 | CrowdsaleController | addToWhitelist(address)              | public     | false    | added   | managerOnly                                                                  | [√]        | [√]      | [√]      |
