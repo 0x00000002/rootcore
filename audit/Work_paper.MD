@@ -2,7 +2,7 @@
 ## ./contracts
 
 [CrowdsaleController.sol](/contracts/CrowdsaleController.sol)
-
+```
 .----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------.
 |                                                                    D:\Blockchain-Solidity\rootcore-Audit\contracts\CrowdsaleController.sol
         |
@@ -20,7 +20,7 @@
 | CrowdsaleController | processContribution()                | private    | false    | amount  | active,etherSoftCapNotReached,etherCapNotReached,validGasPrice               | [√]        | [√]      | [√]      |
 | CrowdsaleController | ()                                   | public     | false    |         | payable                                                                      | [√]        | [√]      | [√]      |
 '----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
-
+```
 
 [ERC20Token.sol](/contracts/ERC20Token.sol)
 
