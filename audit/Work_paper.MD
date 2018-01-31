@@ -1,3 +1,10 @@
+
+| Contract |          Function           | Visibility | Constant | Returns |  Modifiers  | Static Analysis | Test Coverage | Functional Analysis |
+|----------|-----------------------------|------------|----------|---------|-------------|-----------------|---------------|---------------------|
+| Managed  | Managed()                   | public     | false    |         |             | [√]             | [√]           | [√]                 |
+| Managed  | transferManagement(address) | public     | false    |         | managerOnly | [√]             | [√]           | [√]                 |
+| Managed  | acceptManagement()          | public     | false    |         |             | [√]             | [√]           | [√]                 |
+
 # MOTHERSHIP Work paper
 ## ./contracts
 
