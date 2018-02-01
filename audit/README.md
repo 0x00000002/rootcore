@@ -97,8 +97,8 @@ The audit report is focused on the following key areas - though this is not an e
 - **modifier greaterThanZero not used** - `Best practice`
   [#L14](https://github.com/tikonoff/rootcore/blob/master/contracts/helpers/TestUtils.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/22),
 - **expression-indent** - `Best practice`
-  [#L114](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/22)
-  
+  [#L114](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/23)
+
 ### Moderate
 - None found
 -
