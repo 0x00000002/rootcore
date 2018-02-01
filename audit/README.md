@@ -7,6 +7,7 @@ Solidity contracts were sourced from the public Github repo [lucywe/rootcore-cro
 
 ## Scope
 All Solidity code contained in [/contracts](https://github.com/lucywe/rootcore-crowdsale/tree/master/solidity/contracts) was considered in scope along with the tests contained in [/tests](https://github.com/lucywe/rootcore-crowdsale/tree/master/solidity/test) as a basis for static and dynamic analysis.
+To see the details of the [work report](https://github.com/tikonoff/rootcore/blob/master/audit/Work_paper.MD).
 
 ## Focus Areas
 The audit report is focused on the following key areas - though this is not an exhaustive list.
