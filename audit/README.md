@@ -7,7 +7,6 @@ Solidity contracts were sourced from the public Github repo [lucywe/rootcore-cro
 
 ## Scope
 All Solidity code contained in [/contracts](https://github.com/lucywe/rootcore-crowdsale/tree/master/solidity/contracts) was considered in scope along with the tests contained in [/tests](https://github.com/lucywe/rootcore-crowdsale/tree/master/solidity/test) as a basis for static and dynamic analysis.
-To see the details of the [work report](https://github.com/tikonoff/rootcore/blob/master/audit/Work_paper.MD).
 
 ## Focus Areas
 The audit report is focused on the following key areas - though this is not an exhaustive list.
@@ -98,8 +97,8 @@ The audit report is focused on the following key areas - though this is not an e
 - **modifier greaterThanZero not used** - `Best practice`
   [#L14](https://github.com/tikonoff/rootcore/blob/master/contracts/helpers/TestUtils.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/22),
 - **expression-indent** - `Best practice`
-  [#L114](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/23)
-
+  [#L114](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/22)
+  
 ### Moderate
 - None found
 -
@@ -123,6 +122,10 @@ build address : [Link](https://travis-ci.org/ryu9827/rootcore/builds/334233219)
 
 Upon finalization of the contracts to be used by Wings, the contracts were assessed on the gas usage of each function to ensure there aren't any unforeseen issues with exceeding the block size GasLimit. A detailed report can be found in [Gas_Consumption.md](https://github.com/tikonoff/rootcore/blob/master/audit/Gas_consumption_report.md).
 
+
+## Functional tests
+
+Functions were tested according the business scenario and available here [./kovan-functional-tests.md](https://github.com/tikonoff/rootcore/blob/master/audit/kovan-functional-tests.md)
 
 
 ## Conclusion
