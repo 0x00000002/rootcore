@@ -91,11 +91,14 @@ The audit report is focused on the following key areas - though this is not an e
 - **state mutibility can be restricted to pure** - `Best practice`
   [#L55,68](https://github.com/tikonoff/rootcore/blob/master/contracts/Utils.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/15)
 - **use of constant is deprecated** - `Best practice`
-  [#L21-26,31,32,35-37,125](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol), [#L12,16,20](https://github.com/tikonoff/rootcore/blob/master/contracts/helpers/TestUtils.sol), [#L8-13](https://github.com/tikonoff/rootcore/blob/master/contracts/interfaces/IERC20Token.sol), [#L8](https://github.com/tikonoff/rootcore/blob/master/contracts/interfaces/IOwned.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/16)
+  [#L21-26,31,32,35-37,125](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol), [#L12,16,20](https://github.com/tikonoff/rootcore/blob/master/contracts/helpers/TestUtils.sol), [#L8-13](https://github.com/tikonoff/rootcore/blob/master/contracts/interfaces/IERC20Token.sol), [#L8](https://github.com/tikonoff/rootcore/blob/master/contracts/interfaces/IOwned.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/16),
 - **Version of pragma is not latest** - `Best practice`
-  ..[View on Github](https://github.com/tikonoff/rootcore/issues/18)
+  ..[View on Github](https://github.com/tikonoff/rootcore/issues/18),
 - **modifier greaterThanZero not used** - `Best practice`
-  [#L14](https://github.com/tikonoff/rootcore/blob/master/contracts/helpers/TestUtils.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/22)
+  [#L14](https://github.com/tikonoff/rootcore/blob/master/contracts/helpers/TestUtils.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/22),
+- **expression-indent** - `Best practice`
+  [#L114](https://github.com/tikonoff/rootcore/blob/master/contracts/CrowdsaleController.sol) ..[View on Github](https://github.com/tikonoff/rootcore/issues/22)
+  
 ### Moderate
 - None found
 -
