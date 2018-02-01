@@ -1,7 +1,7 @@
 # Rootcore crowd Sale Audit Report
 
 ## Preamble
-This audit report was undertaken by BlockchainLabs.nz for the purpose of providing feedback to Mothership. It has subsequently been shared publicly without any express or implied warranty.
+This audit report was undertaken by BlockchainLabs.nz for the purpose of providing feedback to Rootcore. It has subsequently been shared publicly without any express or implied warranty.
 
 Solidity contracts were sourced from the public Github repo [lucywe/rootcore-crowdsale](https://github.com/lucywe/rootcore-crowdsale) prior to commit [9e118591b6f61d738effcb0a486c87bdad757b29](https://github.com/lucywe/rootcore-crowdsale/commit/9e118591b6f61d738effcb0a486c87bdad757b29) - we would encourage all community members and token holders to make their own assessment of the contracts.
 
@@ -120,7 +120,7 @@ build address : [Link](https://travis-ci.org/ryu9827/rootcore/builds/334233219)
 
 ## Gas Consumption
 
-Upon finalization of the contracts to be used by Wings, the contracts were assessed on the gas usage of each function to ensure there aren't any unforeseen issues with exceeding the block size GasLimit. A detailed report can be found in [Gas_Consumption.md](https://github.com/tikonoff/rootcore/blob/master/audit/Gas_consumption_report.md).
+Upon finalization of the contracts to be used by Rootcore, the contracts were assessed on the gas usage of each function to ensure there aren't any unforeseen issues with exceeding the block size GasLimit. A detailed report can be found in [Gas_Consumption.md](https://github.com/tikonoff/rootcore/blob/master/audit/Gas_consumption_report.md).
 
 
 ## Functional tests
